@@ -67,6 +67,8 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmdMostrar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,7 +86,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(329, 265);
+            this.tabControl1.Size = new System.Drawing.Size(362, 291);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -98,7 +100,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(321, 239);
+            this.tabPage1.Size = new System.Drawing.Size(354, 265);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -107,23 +109,23 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(50, 19);
+            this.lblTitulo.Location = new System.Drawing.Point(102, 26);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(193, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(117, 20);
             this.lblTitulo.TabIndex = 5;
-            this.lblTitulo.Text = "Ingrese los datos clientes ";
+            this.lblTitulo.Text = "Datos Clientes ";
             this.lblTitulo.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(74, 110);
+            this.txtNombreCliente.Location = new System.Drawing.Point(83, 135);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(100, 20);
             this.txtNombreCliente.TabIndex = 4;
             // 
             // txtClienteID
             // 
-            this.txtClienteID.Location = new System.Drawing.Point(74, 62);
+            this.txtClienteID.Location = new System.Drawing.Point(81, 83);
             this.txtClienteID.Name = "txtClienteID";
             this.txtClienteID.Size = new System.Drawing.Size(100, 20);
             this.txtClienteID.TabIndex = 3;
@@ -131,7 +133,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(21, 113);
+            this.lblNombreCliente.Location = new System.Drawing.Point(33, 135);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(44, 13);
             this.lblNombreCliente.TabIndex = 2;
@@ -140,7 +142,7 @@
             // lblidClientes
             // 
             this.lblidClientes.AutoSize = true;
-            this.lblidClientes.Location = new System.Drawing.Point(21, 65);
+            this.lblidClientes.Location = new System.Drawing.Point(33, 83);
             this.lblidClientes.Name = "lblidClientes";
             this.lblidClientes.Size = new System.Drawing.Size(18, 13);
             this.lblidClientes.TabIndex = 1;
@@ -148,7 +150,7 @@
             // 
             // cmdRegistrarCliente
             // 
-            this.cmdRegistrarCliente.Location = new System.Drawing.Point(168, 163);
+            this.cmdRegistrarCliente.Location = new System.Drawing.Point(252, 226);
             this.cmdRegistrarCliente.Name = "cmdRegistrarCliente";
             this.cmdRegistrarCliente.Size = new System.Drawing.Size(75, 23);
             this.cmdRegistrarCliente.TabIndex = 0;
@@ -171,14 +173,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(321, 239);
+            this.tabPage2.Size = new System.Drawing.Size(354, 265);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vendedor";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // cmdRegistrarVendedor
             // 
-            this.cmdRegistrarVendedor.Location = new System.Drawing.Point(182, 196);
+            this.cmdRegistrarVendedor.Location = new System.Drawing.Point(260, 225);
             this.cmdRegistrarVendedor.Name = "cmdRegistrarVendedor";
             this.cmdRegistrarVendedor.Size = new System.Drawing.Size(75, 23);
             this.cmdRegistrarVendedor.TabIndex = 9;
@@ -188,28 +190,28 @@
             // 
             // txtComisionVendedor
             // 
-            this.txtComisionVendedor.Location = new System.Drawing.Point(120, 125);
+            this.txtComisionVendedor.Location = new System.Drawing.Point(120, 184);
             this.txtComisionVendedor.Name = "txtComisionVendedor";
             this.txtComisionVendedor.Size = new System.Drawing.Size(100, 20);
             this.txtComisionVendedor.TabIndex = 8;
             // 
             // txtVendedorActivo
             // 
-            this.txtVendedorActivo.Location = new System.Drawing.Point(120, 99);
+            this.txtVendedorActivo.Location = new System.Drawing.Point(120, 149);
             this.txtVendedorActivo.Name = "txtVendedorActivo";
             this.txtVendedorActivo.Size = new System.Drawing.Size(100, 20);
             this.txtVendedorActivo.TabIndex = 7;
             // 
             // txtNombreVendedor
             // 
-            this.txtNombreVendedor.Location = new System.Drawing.Point(120, 71);
+            this.txtNombreVendedor.Location = new System.Drawing.Point(120, 109);
             this.txtNombreVendedor.Name = "txtNombreVendedor";
             this.txtNombreVendedor.Size = new System.Drawing.Size(100, 20);
             this.txtNombreVendedor.TabIndex = 6;
             // 
             // txtVendedorID
             // 
-            this.txtVendedorID.Location = new System.Drawing.Point(120, 45);
+            this.txtVendedorID.Location = new System.Drawing.Point(120, 69);
             this.txtVendedorID.Name = "txtVendedorID";
             this.txtVendedorID.Size = new System.Drawing.Size(61, 20);
             this.txtVendedorID.TabIndex = 5;
@@ -217,7 +219,7 @@
             // lblComisionVendedor
             // 
             this.lblComisionVendedor.AutoSize = true;
-            this.lblComisionVendedor.Location = new System.Drawing.Point(20, 125);
+            this.lblComisionVendedor.Location = new System.Drawing.Point(20, 184);
             this.lblComisionVendedor.Name = "lblComisionVendedor";
             this.lblComisionVendedor.Size = new System.Drawing.Size(80, 13);
             this.lblComisionVendedor.TabIndex = 4;
@@ -226,7 +228,7 @@
             // lblEstadoVendedor
             // 
             this.lblEstadoVendedor.AutoSize = true;
-            this.lblEstadoVendedor.Location = new System.Drawing.Point(20, 99);
+            this.lblEstadoVendedor.Location = new System.Drawing.Point(20, 149);
             this.lblEstadoVendedor.Name = "lblEstadoVendedor";
             this.lblEstadoVendedor.Size = new System.Drawing.Size(37, 13);
             this.lblEstadoVendedor.TabIndex = 3;
@@ -235,7 +237,7 @@
             // lblNombreVendedor
             // 
             this.lblNombreVendedor.AutoSize = true;
-            this.lblNombreVendedor.Location = new System.Drawing.Point(20, 71);
+            this.lblNombreVendedor.Location = new System.Drawing.Point(20, 109);
             this.lblNombreVendedor.Name = "lblNombreVendedor";
             this.lblNombreVendedor.Size = new System.Drawing.Size(44, 13);
             this.lblNombreVendedor.TabIndex = 2;
@@ -244,7 +246,7 @@
             // lblidVendedor
             // 
             this.lblidVendedor.AutoSize = true;
-            this.lblidVendedor.Location = new System.Drawing.Point(20, 45);
+            this.lblidVendedor.Location = new System.Drawing.Point(20, 69);
             this.lblidVendedor.Name = "lblidVendedor";
             this.lblidVendedor.Size = new System.Drawing.Size(18, 13);
             this.lblidVendedor.TabIndex = 1;
@@ -254,7 +256,7 @@
             // 
             this.lblTituloVendedor.AutoSize = true;
             this.lblTituloVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloVendedor.Location = new System.Drawing.Point(83, 15);
+            this.lblTituloVendedor.Location = new System.Drawing.Point(116, 16);
             this.lblTituloVendedor.Name = "lblTituloVendedor";
             this.lblTituloVendedor.Size = new System.Drawing.Size(126, 20);
             this.lblTituloVendedor.TabIndex = 0;
@@ -279,14 +281,15 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(321, 239);
+            this.tabPage3.Size = new System.Drawing.Size(354, 265);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Ventas";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // cmdRegistrarVentas
             // 
-            this.cmdRegistrarVentas.Location = new System.Drawing.Point(219, 210);
+            this.cmdRegistrarVentas.Location = new System.Drawing.Point(259, 227);
             this.cmdRegistrarVentas.Name = "cmdRegistrarVentas";
             this.cmdRegistrarVentas.Size = new System.Drawing.Size(75, 23);
             this.cmdRegistrarVentas.TabIndex = 14;
@@ -297,9 +300,10 @@
             // lblDatosVentas
             // 
             this.lblDatosVentas.AutoSize = true;
+            this.lblDatosVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatosVentas.Location = new System.Drawing.Point(116, 16);
             this.lblDatosVentas.Name = "lblDatosVentas";
-            this.lblDatosVentas.Size = new System.Drawing.Size(71, 13);
+            this.lblDatosVentas.Size = new System.Drawing.Size(107, 20);
             this.lblDatosVentas.TabIndex = 13;
             this.lblDatosVentas.Text = "Datos Ventas";
             // 
@@ -407,11 +411,12 @@
             // 
             // tabBaseDeDatos
             // 
+            this.tabBaseDeDatos.Controls.Add(this.cmdMostrar);
             this.tabBaseDeDatos.Controls.Add(this.dgvConsulta);
             this.tabBaseDeDatos.Location = new System.Drawing.Point(4, 22);
             this.tabBaseDeDatos.Name = "tabBaseDeDatos";
             this.tabBaseDeDatos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBaseDeDatos.Size = new System.Drawing.Size(321, 239);
+            this.tabBaseDeDatos.Size = new System.Drawing.Size(354, 265);
             this.tabBaseDeDatos.TabIndex = 3;
             this.tabBaseDeDatos.Text = "Consultar";
             this.tabBaseDeDatos.UseVisualStyleBackColor = true;
@@ -422,10 +427,11 @@
             this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
-            this.dgvConsulta.Location = new System.Drawing.Point(6, 6);
+            this.Column3,
+            this.Column4});
+            this.dgvConsulta.Location = new System.Drawing.Point(6, 3);
             this.dgvConsulta.Name = "dgvConsulta";
-            this.dgvConsulta.Size = new System.Drawing.Size(309, 227);
+            this.dgvConsulta.Size = new System.Drawing.Size(342, 235);
             this.dgvConsulta.TabIndex = 0;
             // 
             // Column1
@@ -443,11 +449,26 @@
             this.Column3.HeaderText = "Ventas";
             this.Column3.Name = "Column3";
             // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Monto";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // cmdMostrar
+            // 
+            this.cmdMostrar.Location = new System.Drawing.Point(131, 242);
+            this.cmdMostrar.Name = "cmdMostrar";
+            this.cmdMostrar.Size = new System.Drawing.Size(89, 20);
+            this.cmdMostrar.TabIndex = 1;
+            this.cmdMostrar.Text = "Mostrar";
+            this.cmdMostrar.UseVisualStyleBackColor = true;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 288);
+            this.ClientSize = new System.Drawing.Size(394, 309);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmPrincipal";
             this.Text = "Base de Datos SP1";
@@ -506,6 +527,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button cmdMostrar;
     }
 }
 

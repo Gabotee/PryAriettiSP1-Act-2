@@ -24,14 +24,15 @@ namespace PryAriettiSP1_Act_2
 
             //Crea un Archivo.... El true es para q no se sobreescriba el archivo 
             StreamWriter swClientes = new StreamWriter("./Clientes.text",true);
-            //Pasa lo que se escribe en las textbox al Archivo 
-            swClientes.WriteLine(txtClienteID.Text + " " + txtNombreCliente.Text);
+         
             //Cierra el archivo 
             swClientes.Close();
+
             //Lee el Archivo 
             StreamReader srClientes = new StreamReader("./Clientes.text");
 
-            char VarSeparador = Convert.ToChar(",");
+            // Se crea Variable para separar 
+            char VarSeparador = Convert.ToChar(" ");
             
             while (!srClientes.EndOfStream)
             {
@@ -52,9 +53,9 @@ namespace PryAriettiSP1_Act_2
 
             if (BanderaClientes == false)
             {
-                StreamWriter swGrabar = new StreamWriter("./Clientes.text");
+                StreamWriter swGrabar = new StreamWriter("./Clientes.text", true);
 
-                swGrabar.WriteLine(txtClienteID.Text + "," + txtNombreCliente.Text);
+                swGrabar.WriteLine(txtClienteID.Text + " " +  txtNombreCliente.Text);
 
                 swGrabar.Close();
 
@@ -89,7 +90,7 @@ namespace PryAriettiSP1_Act_2
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void cmdRegistrarVendedor_Click(object sender, EventArgs e)
@@ -100,21 +101,23 @@ namespace PryAriettiSP1_Act_2
             //split separa... separar por le caracter (",")...  
 
 
+            
             bool BanderaVendedor = false;
 
+            // Aca se creo el archivo Vendedor.. 
             StreamWriter swVendedor = new StreamWriter("./Vendedor.text", true);
-
-            swVendedor.WriteLine(txtVendedorID.Text + " " + txtNombreVendedor.Text);
-
+            // Se cierra el Archivo
             swVendedor.Close();
-
+            // Se lee el Archivo 
             StreamReader srVendedor = new StreamReader("./Vendedor.text");
-
-            char VarSeparadorVendedor = Convert.ToChar(",");
-
+            // Se crea Variable para separar 
+            char VarSeparadorVendedor = Convert.ToChar(" ");
+            // Mientras sea diferente de fin de archivo  
             while (!srVendedor.EndOfStream)
             {
+                // Se le pasa a un vector los datos del archivo 
                 string[] VecVendedor = srVendedor.ReadLine().Split(VarSeparadorVendedor);
+                // Si el dato ya esta en el vector se toma como repetido 
                 if (txtVendedorID.Text == VecVendedor[0])
                 {
                     BanderaVendedor = true;
@@ -126,10 +129,11 @@ namespace PryAriettiSP1_Act_2
 
             srVendedor.Close();
 
+            // Se le pasa el dato al vector 
             if (BanderaVendedor == false)
             {
-                StreamWriter swGrabar = new StreamWriter("./Vendedor.text");
-                swGrabar.WriteLine(txtVendedorID.Text + "," + txtNombreVendedor.Text);
+                StreamWriter swGrabar = new StreamWriter("./Vendedor.text", true);
+                swGrabar.WriteLine(txtVendedorID.Text + " " + txtNombreVendedor.Text);
                 swGrabar.Close();
                 MessageBox.Show("Los datos se guardaron correctamente");
                 txtVendedorID.Text = "";
@@ -143,12 +147,18 @@ namespace PryAriettiSP1_Act_2
 
         private void cmdRegistrarVentas_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
             StreamReader srVendedorID = new StreamReader("./Vendedor.text");
 
             while (!srVendedorID.EndOfStream)
             {
                 string InformacionVendedor = srVendedorID.ReadLine();
-                lstVendedorID.Items.Add(InformacionVendedor.Substring(0,2));
+
+                lstVendedorID.Items.Add(InformacionVendedor.Substring(2));
             }
 
             srVendedorID.Close();
