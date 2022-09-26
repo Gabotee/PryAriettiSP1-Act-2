@@ -147,21 +147,39 @@ namespace PryAriettiSP1_Act_2
 
         private void cmdRegistrarVentas_Click(object sender, EventArgs e)
         {
-            
+            StreamWriter SwVentas = new StreamWriter("./Ventas.text", true);
+
+            SwVentas.Close();
+
+            StreamReader SrVetas = new StreamReader("./Ventas.text");
+
+            char VarSeparadorVentas = Convert.ToChar(" ");
+
+            //bool BanderaVentas = false;
+
+            while (!SrVetas.EndOfStream)
+            {
+                string[] VecVentas = SrVetas.ReadLine().Split(VarSeparadorVentas);
+
+                StreamWriter SrGrabarVentas = new StreamWriter ("./Ventas.text", true);
+
+                SrGrabarVentas.WriteLine(lstClienteID.Text + " " + lstVendedorID.Text + " " + txtMonto.Text);
+            }
+
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            StreamReader srVendedorID = new StreamReader("./Vendedor.text");
+            //StreamReader srVendedorID = new StreamReader("./Vendedor.text");
 
-            while (!srVendedorID.EndOfStream)
-            {
-                string InformacionVendedor = srVendedorID.ReadLine();
+            //while (!srVendedorID.EndOfStream)
+            //{
+            //    string InformacionVendedor = srVendedorID.ReadLine();
 
-                lstVendedorID.Items.Add(InformacionVendedor.Substring(2));
-            }
+            //    lstVendedorID.Items.Add(InformacionVendedor.Substring(2));
+            //}
 
-            srVendedorID.Close();
+            //srVendedorID.Close();
         }
     }
 }

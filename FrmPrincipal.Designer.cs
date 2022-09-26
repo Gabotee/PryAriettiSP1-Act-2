@@ -55,20 +55,20 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblMonto = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
+            this.txtTipoFactura = new System.Windows.Forms.TextBox();
             this.lblClienteID = new System.Windows.Forms.Label();
             this.lblVendedorID = new System.Windows.Forms.Label();
             this.lblNumeroFactura = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTipoFactura = new System.Windows.Forms.Label();
             this.tabBaseDeDatos = new System.Windows.Forms.TabPage();
+            this.cmdMostrar = new System.Windows.Forms.Button();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmdMostrar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -271,8 +271,8 @@
             this.tabPage3.Controls.Add(this.dtpFecha);
             this.tabPage3.Controls.Add(this.lblMonto);
             this.tabPage3.Controls.Add(this.txtMonto);
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.txtNumeroFactura);
+            this.tabPage3.Controls.Add(this.txtTipoFactura);
             this.tabPage3.Controls.Add(this.lblClienteID);
             this.tabPage3.Controls.Add(this.lblVendedorID);
             this.tabPage3.Controls.Add(this.lblNumeroFactura);
@@ -348,19 +348,19 @@
             this.txtMonto.Size = new System.Drawing.Size(62, 20);
             this.txtMonto.TabIndex = 8;
             // 
-            // textBox2
+            // txtNumeroFactura
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNumeroFactura.Location = new System.Drawing.Point(95, 75);
+            this.txtNumeroFactura.Name = "txtNumeroFactura";
+            this.txtNumeroFactura.Size = new System.Drawing.Size(62, 20);
+            this.txtNumeroFactura.TabIndex = 6;
             // 
-            // textBox1
+            // txtTipoFactura
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(62, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtTipoFactura.Location = new System.Drawing.Point(95, 43);
+            this.txtTipoFactura.Name = "txtTipoFactura";
+            this.txtTipoFactura.Size = new System.Drawing.Size(62, 20);
+            this.txtTipoFactura.TabIndex = 5;
             // 
             // lblClienteID
             // 
@@ -421,6 +421,15 @@
             this.tabBaseDeDatos.Text = "Consultar";
             this.tabBaseDeDatos.UseVisualStyleBackColor = true;
             // 
+            // cmdMostrar
+            // 
+            this.cmdMostrar.Location = new System.Drawing.Point(131, 242);
+            this.cmdMostrar.Name = "cmdMostrar";
+            this.cmdMostrar.Size = new System.Drawing.Size(89, 20);
+            this.cmdMostrar.TabIndex = 1;
+            this.cmdMostrar.Text = "Mostrar";
+            this.cmdMostrar.UseVisualStyleBackColor = true;
+            // 
             // dgvConsulta
             // 
             this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -454,15 +463,6 @@
             this.Column4.HeaderText = "Monto";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // cmdMostrar
-            // 
-            this.cmdMostrar.Location = new System.Drawing.Point(131, 242);
-            this.cmdMostrar.Name = "cmdMostrar";
-            this.cmdMostrar.Size = new System.Drawing.Size(89, 20);
-            this.cmdMostrar.TabIndex = 1;
-            this.cmdMostrar.Text = "Mostrar";
-            this.cmdMostrar.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 
@@ -509,8 +509,8 @@
         private System.Windows.Forms.Label lblTituloVendedor;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumeroFactura;
+        private System.Windows.Forms.TextBox txtTipoFactura;
         private System.Windows.Forms.Label lblClienteID;
         private System.Windows.Forms.Label lblVendedorID;
         private System.Windows.Forms.Label lblNumeroFactura;
