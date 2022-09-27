@@ -129,7 +129,7 @@ namespace PryAriettiSP1_Act_2
 
             srVendedor.Close();
 
-            // Se le pasa el dato al vector 
+            
             if (BanderaVendedor == false)
             {
                 StreamWriter swGrabar = new StreamWriter("./Vendedor.text", true);
@@ -149,37 +149,80 @@ namespace PryAriettiSP1_Act_2
         {
             StreamWriter SwVentas = new StreamWriter("./Ventas.text", true);
 
+            SwVentas.WriteLine(txtTipoFactura.Text + " " + txtNumeroFactura.Text + " " + lstClienteID.Text + " " + lstVendedorID.Text + " " + txtMonto.Text + " " + dtpFecha.Text);
+
             SwVentas.Close();
 
-            StreamReader SrVetas = new StreamReader("./Ventas.text");
+            MessageBox.Show("Venta Cargada Exitosamente");
 
-            char VarSeparadorVentas = Convert.ToChar(" ");
-
-            //bool BanderaVentas = false;
-
-            while (!SrVetas.EndOfStream)
-            {
-                string[] VecVentas = SrVetas.ReadLine().Split(VarSeparadorVentas);
-
-                StreamWriter SrGrabarVentas = new StreamWriter ("./Ventas.text", true);
-
-                SrGrabarVentas.WriteLine(lstClienteID.Text + " " + lstVendedorID.Text + " " + txtMonto.Text);
-            }
-
+            txtTipoFactura.Text = "";
+            txtNumeroFactura.Text = "";
+            lstClienteID.SelectedIndex = -1;
+            lstVendedorID.SelectedIndex = -1;
+            txtMonto.Text = "";
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            //StreamReader srVendedorID = new StreamReader("./Vendedor.text");
 
-            //while (!srVendedorID.EndOfStream)
-            //{
-            //    string InformacionVendedor = srVendedorID.ReadLine();
+        }
 
-            //    lstVendedorID.Items.Add(InformacionVendedor.Substring(2));
-            //}
+        private void lstClienteID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
 
-            //srVendedorID.Close();
+        }
+
+        private void tabVentas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //En esta seccion se encuentra el codigo para hacer q aparezca lo q se ecribio en el archivo
+            // en la lista desplegable.. 
+
+            lstClienteID.Items.Clear();
+            lstVendedorID.Items.Clear();
+
+            StreamWriter Cliente = new StreamWriter("./Clientes.text", true);
+            Cliente.Close();
+            StreamWriter Vendedor = new StreamWriter("./Vendedor.text", true);
+            Vendedor.Close();
+
+            StreamReader LeerCliente = new StreamReader("./Clientes.text");
+
+            StreamReader LeerVendedor = new StreamReader("./Vendedor.text");
+
+            char VarSeprarador = Convert.ToChar(" ");
+
+            while (!LeerCliente.EndOfStream)
+            {
+                string[] VecClientes = LeerCliente.ReadLine().Split(VarSeprarador);
+
+                lstClienteID.Items.Add(VecClientes[0]);
+            }
+
+            LeerCliente.Close();
+
+            while (!LeerVendedor.EndOfStream)
+            {
+                string[] VecVendedor = LeerVendedor.ReadLine().Split(VarSeprarador);
+
+                lstVendedorID.Items.Add(VecVendedor[0]);
+            }
+
+            LeerVendedor.Close();
+
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Ventana Para Consultar 
+            FrmConsultar VentanaConsultar = new FrmConsultar();
+            VentanaConsultar.ShowDialog();
+        }
+
+        private void tabPageVendedor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
