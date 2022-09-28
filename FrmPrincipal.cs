@@ -20,6 +20,9 @@ namespace PryAriettiSP1_Act_2
 
         private void cmdRegistrarCliente_Click(object sender, EventArgs e)
         {
+
+            //Este codigo registra Los datos del cliente 
+
             bool BanderaClientes = false;
 
             //Crea un Archivo.... El true es para q no se sobreescriba el archivo 
@@ -36,7 +39,7 @@ namespace PryAriettiSP1_Act_2
             
             while (!srClientes.EndOfStream)
             {
-                //Se crea vector para guardar lo que tiene el archivo dentro 
+                //Se guarda en el vector los datos del archivo 
                 string[] VecClientes = srClientes.ReadLine().Split(VarSeparador);
 
                 //Si es igual No se guardan los datos, porque ya esta registrado 
@@ -98,7 +101,7 @@ namespace PryAriettiSP1_Act_2
             // file.exist(Ruta).. para ver si existe un archivo
             // file create.. crea un archivo 
             //subtring lee desde la posicion inicial hasta la q se le indique (0,3)..
-            //split separa... separar por le caracter (",")...  
+            //split separa... separar por el caracter (",")...  
 
 
             
@@ -147,6 +150,8 @@ namespace PryAriettiSP1_Act_2
 
         private void cmdRegistrarVentas_Click(object sender, EventArgs e)
         {
+            //Cargar las ventas al archivo 
+
             StreamWriter SwVentas = new StreamWriter("./Ventas.text", true);
 
             SwVentas.WriteLine(txtTipoFactura.Text + " " + txtNumeroFactura.Text + " " + lstClienteID.Text + " " + lstVendedorID.Text + " " + txtMonto.Text + " " + dtpFecha.Text);
@@ -175,9 +180,10 @@ namespace PryAriettiSP1_Act_2
 
         private void tabVentas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //En esta seccion se encuentra el codigo para hacer q aparezca lo q se ecribio en el archivo
-            // en la lista desplegable.. 
+           //Este codigo es para mostrar la ID del cliente y del vendedor en las listas desplegables 
+           //de la ventana Ventas.
 
+            //Limpiar las listas desplegables 
             lstClienteID.Items.Clear();
             lstVendedorID.Items.Clear();
 
@@ -215,14 +221,14 @@ namespace PryAriettiSP1_Act_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Ventana Para Consultar 
+            //Se crea Ventana Para Consultar 
             FrmConsultar VentanaConsultar = new FrmConsultar();
             VentanaConsultar.ShowDialog();
         }
 
         private void tabPageVendedor_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -20,21 +20,22 @@ namespace PryAriettiSP1_Act_2
 
         private void cmdListarVentas_Click(object sender, EventArgs e)
         {
-            //En Esta Parte del codigo se muestra lo del archivo en una Grilla 
+            //En Esta Parte del codigo se muestran los datos del archivo en una Grilla.
+
+             StreamReader srLeer = new StreamReader("./Ventas.text");
+
+             char VarSeparador = Convert.ToChar(" ");
 
             dgvConsulta.Rows.Clear();
 
-
-            StreamReader srLeer = new StreamReader("./Ventas.text");
-
             while (!srLeer.EndOfStream)
             {
-                string LeerVentas = srLeer.ReadLine();
-                string[] VecVentas = LeerVentas.Split('.');
-                dgvConsulta.Rows.Add(VecVentas[2], VecVentas[3], VecVentas[4], VecVentas[1], VecVentas[0], VecVentas[5]);
+                string[] VecVentas = srLeer.ReadLine().Split(VarSeparador);
+                dgvConsulta.Rows.Add(VecVentas);
             }
 
             srLeer.Close();
+          
         }
     }
 }
